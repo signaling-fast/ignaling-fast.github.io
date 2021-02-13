@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Redirect to a Webpage</h2>
+<p>The replace() method replaces the current document with a new one:</p>
+
+<button onclick="myFunction()">Open App</button>
+
+<script>
+function getQueryStringValue (key) {  
+  return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
+}  
+
+
+https://nicememe.website/?code=NhhvTDYsFcdgNLnnLijcl7Ku7bEEeee&state=15773059ghq9183habn
+// Would write the value of the QueryString-variable called name to the console  
+let code = getQueryStringValue("code")
+let state = getQueryStringValue("state")
+
+function myFunction() {
+  location.replace(`signaling-fast://oauth-callback/discord?code=${code}&state=${state}`)
+}
+</script>
+
+</body>
+</html> 
+
